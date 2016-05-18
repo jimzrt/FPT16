@@ -1,0 +1,502 @@
+<waren>
+  <ware id="1470706">
+    <name>test</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470707">
+    <name>test</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470708">
+    <name>test</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470709">
+    <name>test</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470710">
+    <name>test</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470711">
+    <name>test</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470712">
+    <name>test</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470713">
+    <name>Testpro</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470714">
+    <name>Testpro</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470715">
+    <name>Testpro</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470716">
+    <name>Testpro</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470717">
+    <name>Testpro</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470718">
+    <name>Testpro</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470719">
+    <name>Testpro</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470720">
+    <name>Testpro</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470721">
+    <name>Testpro</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470722">
+    <name>Testpro</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470723">
+    <name>tesprodukt</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470724">
+    <name>tesprodukt</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470725">
+    <name>tesprodukt</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470726">
+    <name>testprodukt4</name>
+    <preis>23.00</preis>
+    <anzahl>4</anzahl>
+  </ware>
+  <ware id="1470727">
+    <name>testprodukt</name>
+    <preis>23.00</preis>
+    <anzahl>4</anzahl>
+  </ware>
+  <ware id="1470728">
+    <name>test</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470729">
+    <name>test</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470730">
+    <name>test</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470731">
+    <name>test</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470732">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470733">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470734">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470735">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470736">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470737">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470738">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470739">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470740">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470741">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470742">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470743">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470744">
+    <name>test</name>
+    <preis>45.23</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470745">
+    <name>Test</name>
+    <preis>14.98</preis>
+    <anzahl>5</anzahl>
+  </ware>
+  <ware id="1470746">
+    <name>test</name>
+    <preis>13.04</preis>
+    <anzahl>2</anzahl>
+  </ware>
+  <ware id="1470747">
+    <name>Hurz!</name>
+    <preis>5000.99</preis>
+    <anzahl>99</anzahl>
+  </ware>
+  <ware id="1470748">
+    <name>Hurz!</name>
+    <preis>5000.99</preis>
+    <anzahl>99</anzahl>
+  </ware>
+  <ware id="1470749">
+    <name>Hurz!</name>
+    <preis>5000.99</preis>
+    <anzahl>99</anzahl>
+  </ware>
+  <ware id="1470750">
+    <name>Hurz!</name>
+    <preis>5000.99</preis>
+    <anzahl>99</anzahl>
+  </ware>
+  <ware id="1470751">
+    <name>Hurz!</name>
+    <preis>5000.99</preis>
+    <anzahl>99</anzahl>
+  </ware>
+  <ware id="1470752">
+    <name>Hurz!</name>
+    <preis>5000.99</preis>
+    <anzahl>99</anzahl>
+  </ware>
+  <ware id="1470753">
+    <name>Hurz!</name>
+    <preis>5000.99</preis>
+    <anzahl>99</anzahl>
+  </ware>
+  <ware id="1470754">
+    <name>Hurz!</name>
+    <preis>5000.99</preis>
+    <anzahl>99</anzahl>
+  </ware>
+  <ware id="1470755">
+    <name>Hurz!</name>
+    <preis>5000.99</preis>
+    <anzahl>99</anzahl>
+  </ware>
+  <ware id="1470756">
+    <name>In Büchsen konservierte Ohrschnecke</name>
+    <preis>47.11</preis>
+    <anzahl>50000</anzahl>
+  </ware>
+  <ware id="1470757">
+    <name>langweile hoelzerne Bits</name>
+    <preis>1.75</preis>
+    <anzahl>200</anzahl>
+  </ware>
+  <ware id="1470758">
+    <name>langweile hoelzerne Bits</name>
+    <preis>1.75</preis>
+    <anzahl>200</anzahl>
+  </ware>
+  <ware id="1470759">
+    <name>test</name>
+    <preis>3.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470760">
+    <name>Test</name>
+    <preis>14.98</preis>
+    <anzahl>5</anzahl>
+  </ware>
+  <ware id="1470761">
+    <name>test</name>
+    <preis>13.04</preis>
+    <anzahl>2</anzahl>
+  </ware>
+  <ware id="1470762">
+    <name>Test</name>
+    <preis>14.98</preis>
+    <anzahl>5</anzahl>
+  </ware>
+  <ware id="1470763">
+    <name>test</name>
+    <preis>13.04</preis>
+    <anzahl>2</anzahl>
+  </ware>
+  <ware id="1470764">
+    <name>Test</name>
+    <preis>14.98</preis>
+    <anzahl>5</anzahl>
+  </ware>
+  <ware id="1470765">
+    <name>test</name>
+    <preis>13.04</preis>
+    <anzahl>2</anzahl>
+  </ware>
+  <ware id="1470766">
+    <name>Test</name>
+    <preis>14.98</preis>
+    <anzahl>5</anzahl>
+  </ware>
+  <ware id="1470767">
+    <name>test</name>
+    <preis>13.04</preis>
+    <anzahl>2</anzahl>
+  </ware>
+  <ware id="1470768">
+    <name>Test</name>
+    <preis>14.98</preis>
+    <anzahl>5</anzahl>
+  </ware>
+  <ware id="1470769">
+    <name>test</name>
+    <preis>13.04</preis>
+    <anzahl>2</anzahl>
+  </ware>
+  <ware id="1470770">
+    <name>Test</name>
+    <preis>14.98</preis>
+    <anzahl>5</anzahl>
+  </ware>
+  <ware id="1470771">
+    <name>test</name>
+    <preis>13.04</preis>
+    <anzahl>2</anzahl>
+  </ware>
+  <ware id="1470772">
+    <name>Test</name>
+    <preis>14.98</preis>
+    <anzahl>5</anzahl>
+  </ware>
+  <ware id="1470773">
+    <name>test</name>
+    <preis>13.04</preis>
+    <anzahl>2</anzahl>
+  </ware>
+  <ware id="1470774">
+    <name>Test</name>
+    <preis>14.98</preis>
+    <anzahl>5</anzahl>
+  </ware>
+  <ware id="1470775">
+    <name>test</name>
+    <preis>13.04</preis>
+    <anzahl>2</anzahl>
+  </ware>
+  <ware id="1470776">
+    <name>Test</name>
+    <preis>14.98</preis>
+    <anzahl>5</anzahl>
+  </ware>
+  <ware id="1470777">
+    <name>test</name>
+    <preis>13.04</preis>
+    <anzahl>2</anzahl>
+  </ware>
+  <ware id="1470778">
+    <name>jens-der-held</name>
+    <preis>1501.21</preis>
+    <anzahl>510</anzahl>
+  </ware>
+  <ware id="1470779">
+    <name>jens-der-held</name>
+    <preis>1501.21</preis>
+    <anzahl>510</anzahl>
+  </ware>
+  <ware id="1470780">
+    <name>Test</name>
+    <preis>14.98</preis>
+    <anzahl>5</anzahl>
+  </ware>
+  <ware id="1470781">
+    <name>qwe</name>
+    <preis>1.10</preis>
+    <anzahl>111</anzahl>
+  </ware>
+  <ware id="1470782">
+    <name>TESTPRODUKT</name>
+    <preis>123.12</preis>
+    <anzahl>777</anzahl>
+  </ware>
+  <ware id="1470783">
+    <name>TESTPRODUKT</name>
+    <preis>123.12</preis>
+    <anzahl>777</anzahl>
+  </ware>
+  <ware id="1470784">
+    <name>TESTPRODUKT</name>
+    <preis>123.12</preis>
+    <anzahl>777</anzahl>
+  </ware>
+  <ware id="1470785">
+    <name>hallo</name>
+    <preis>143.00</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470786">
+    <name>ASDF</name>
+    <preis>12.00</preis>
+    <anzahl>12</anzahl>
+  </ware>
+  <ware id="1470787">
+    <name>Tom</name>
+    <preis>4.00</preis>
+    <anzahl>6</anzahl>
+  </ware>
+  <ware id="1470788">
+    <name>teddy1</name>
+    <preis>322.44</preis>
+    <anzahl>188</anzahl>
+  </ware>
+  <ware id="1470789">
+    <name>ghuu</name>
+    <preis>5.50</preis>
+    <anzahl>4</anzahl>
+  </ware>
+  <ware id="1470790">
+    <name>ghuu</name>
+    <preis>5.50</preis>
+    <anzahl>4</anzahl>
+  </ware>
+  <ware id="1470791">
+    <name>ghuu</name>
+    <preis>5.50</preis>
+    <anzahl>4</anzahl>
+  </ware>
+  <ware id="1470792">
+    <name>Duisburg</name>
+    <preis>2.50</preis>
+    <anzahl>12</anzahl>
+  </ware>
+  <ware id="1470793">
+    <name>Duisburg</name>
+    <preis>2.50</preis>
+    <anzahl>12</anzahl>
+  </ware>
+  <ware id="1470794">
+    <name>Duisburg</name>
+    <preis>2.50</preis>
+    <anzahl>12</anzahl>
+  </ware>
+  <ware id="1470795">
+    <name>ghuu</name>
+    <preis>5.50</preis>
+    <anzahl>4</anzahl>
+  </ware>
+  <ware id="1470796">
+    <name>ghuu</name>
+    <preis>5.50</preis>
+    <anzahl>4</anzahl>
+  </ware>
+  <ware id="1470797">
+    <name>ghuu</name>
+    <preis>5.50</preis>
+    <anzahl>4</anzahl>
+  </ware>
+  <ware id="1470798">
+    <name>ghuu</name>
+    <preis>5.50</preis>
+    <anzahl>4</anzahl>
+  </ware>
+  <ware id="1470799">
+    <name>ghuu</name>
+    <preis>5.50</preis>
+    <anzahl>3</anzahl>
+  </ware>
+  <ware id="1470800">
+    <name>ghuu</name>
+    <preis>5.50</preis>
+    <anzahl>4</anzahl>
+  </ware>
+  <ware id="1470801">
+    <name>Duisburg</name>
+    <preis>2.50</preis>
+    <anzahl>12</anzahl>
+  </ware>
+  <ware id="1470802">
+    <name>Duisburg</name>
+    <preis>2.50</preis>
+    <anzahl>12</anzahl>
+  </ware>
+  <ware id="1470803">
+    <name>ghuu</name>
+    <preis>5.50</preis>
+    <anzahl>4</anzahl>
+  </ware>
+  <ware id="1470804">
+    <name>ghuu</name>
+    <preis>5.50</preis>
+    <anzahl>4</anzahl>
+  </ware>
+  <ware id="10000000">
+    <name>banana</name>
+    <preis>1.50</preis>
+    <anzahl>100</anzahl>
+  </ware>
+</waren>
