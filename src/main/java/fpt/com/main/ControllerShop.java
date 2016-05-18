@@ -14,31 +14,32 @@ public class ControllerShop {
 
 	public void link(ModelShop model, ViewShop view) {
 
-
 		strat = new BinaryStrategy();
 
-	//	ids = new IDGenerator();
+		// ids = new IDGenerator();
 		this.model = model;
 
 		view.setList(model);
 
 		view.addEventHandler(e -> {
 			if (e.toString().contains("Add")) {
-				if (!view.getNameInput().isEmpty()
-						&& !view.getPriceInput().isEmpty()
+				if (!view.getNameInput().isEmpty() && !view.getPriceInput().isEmpty()
 						&& !view.getCountInput().isEmpty()) {
 
 					Product p = new Product();
 					p.setName(view.getNameInput());
-					p.setPrice(Double.parseDouble(view.getPriceInput()));
-					p.setQuantity(Integer.parseInt(view.getCountInput()));
-					p.setId(-1);
-				//	try {
-				//		p.setId(ids.giveId());
-				//	} catch (Exception e1) {
-				//		e1.printStackTrace();
-				//	}
-					model.add(p);
+					String regex = "[0-9]+";
+					if (view.getPriceInput().matches(regex) && view.getCountInput().matches(regex)) {
+						p.setPrice(Double.parseDouble(view.getPriceInput()));
+						p.setQuantity(Integer.parseInt(view.getCountInput()));
+						p.setId(-1);
+						// try {
+						// p.setId(ids.giveId());
+						// } catch (Exception e1) {
+						// e1.printStackTrace();
+						// }
+						model.add(p);
+					}
 				}
 
 			}
@@ -89,13 +90,12 @@ public class ControllerShop {
 	public void load() {
 
 		model.clear();
-	//	ids.clear();
+		// ids.clear();
 
-		
 		fpt.com.Product product;
 		try {
 			while ((product = strat.readObject()) != null) {
-			//	ids.addId(product.getId());
+				// ids.addId(product.getId());
 				model.add((Product) product);
 			}
 		} catch (IOException e1) {
@@ -114,9 +114,8 @@ public class ControllerShop {
 
 		Iterator<Product> itp = model.iterator();
 
-		if (model.size() < 5){
-			throw new Exception(
-					"Die Warenliste sollte mindestens 5 Objekte enthalten");
+		if (model.size() < 5) {
+			throw new Exception("Die Warenliste sollte mindestens 5 Objekte enthalten");
 
 		}
 
@@ -134,8 +133,7 @@ public class ControllerShop {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
+
 	}
 
 }
