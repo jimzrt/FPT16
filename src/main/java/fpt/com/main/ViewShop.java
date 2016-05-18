@@ -1,6 +1,12 @@
 package fpt.com.main;
 
+import java.io.PrintStream;
+
 import javafx.collections.FXCollections;
+
+import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,8 +21,6 @@ import javafx.scene.layout.*;
 
 public class ViewShop extends BorderPane {
 
-	// private SimpleStringProperty buttonText = new
-	// SimpleStringProperty("Enter");
 	private Button button = new Button("Add");
 	private Button button2 = new Button("Delete");
 	private TextField name = new TextField();
@@ -58,15 +62,26 @@ public class ViewShop extends BorderPane {
 		button2.setLayoutX(125);
 		button2.setLayoutY(150);
 
-		box.getChildren().addAll(name, price, count, nameL, priceL, countL,
-				button, button2);
+		box.getChildren().addAll(name, price, count, nameL, priceL, countL, button, button2);
 
 		setRight(box);
 
 		setCenter(list);
 
-		strategy.setItems(FXCollections.observableArrayList("Binary",
-				"Beans XML", "XStream XML", "JDBC Database", "OpenJPA Database"));
+		TextArea ta = new TextArea();
+		ta.prefHeight(50);
+		ta.setWrapText(true);
+
+		// Console
+/*		Console console = new Console(ta);
+		PrintStream ps = new PrintStream(console, true);
+		System.setOut(ps);
+		System.setErr(ps);
+
+		setBottom(ta);
+*/
+		strategy.setItems(FXCollections.observableArrayList("Binary", "Beans XML", "XStream XML", "JDBC Database",
+				"OpenJPA Database"));
 		strategy.getSelectionModel().select(0);
 		HBox hbox = new HBox();
 		hbox.setSpacing(5);
@@ -130,8 +145,8 @@ public class ViewShop extends BorderPane {
 	public int getChoice() {
 		return strategy.getSelectionModel().getSelectedIndex();
 	}
-	
-	public void update(){
+
+	public void update() {
 		list.fireEvent(null);
 	}
 
