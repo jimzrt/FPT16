@@ -16,7 +16,7 @@ public class ControllerShop {
 
 		strat = new BinaryStrategy();
 
-		// ids = new IDGenerator();
+		ids = new IDGenerator();
 		this.model = model;
 
 		view.setList(model);
@@ -32,12 +32,12 @@ public class ControllerShop {
 					if (view.getPriceInput().matches(regex) && view.getCountInput().matches(regex)) {
 						p.setPrice(Double.parseDouble(view.getPriceInput()));
 						p.setQuantity(Integer.parseInt(view.getCountInput()));
-						p.setId(-1);
-						// try {
-						// p.setId(ids.giveId());
-						// } catch (Exception e1) {
-						// e1.printStackTrace();
-						// }
+						// p.setId(-1);
+						try {
+							p.setId(ids.giveId());
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
 						model.add(p);
 					}
 				}
@@ -90,12 +90,12 @@ public class ControllerShop {
 	public void load() {
 
 		model.clear();
-		// ids.clear();
+		ids.clear();
 
-		fpt.com.Product product;
+		Product product;
 		try {
-			while ((product = strat.readObject()) != null) {
-				// ids.addId(product.getId());
+			while ((product = (Product) strat.readObject()) != null) {
+				ids.addId(product.getId());
 				model.add((Product) product);
 			}
 		} catch (IOException e1) {

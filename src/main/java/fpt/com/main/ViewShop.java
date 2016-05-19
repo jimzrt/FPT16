@@ -68,20 +68,22 @@ public class ViewShop extends BorderPane {
 
 		setCenter(list);
 
-		TextArea ta = new TextArea();
-		ta.prefHeight(50);
-		ta.setWrapText(true);
+
 
 		// Console
-/*		Console console = new Console(ta);
+/*		
+ * 
+ 		TextArea ta = new TextArea();
+		ta.prefHeight(50);
+		ta.setWrapText(true);Console console = new Console(ta);
 		PrintStream ps = new PrintStream(console, true);
 		System.setOut(ps);
 		System.setErr(ps);
 
 		setBottom(ta);
 */
-		strategy.setItems(FXCollections.observableArrayList("Binary", "Beans XML", "XStream XML", "JDBC Database",
-				"OpenJPA Database"));
+		strategy.setItems(FXCollections.observableArrayList("Binary", "Beans XML", "XStream XML"));
+			//	, "JDBC Database","OpenJPA Database"));
 		strategy.getSelectionModel().select(0);
 		HBox hbox = new HBox();
 		hbox.setSpacing(5);
