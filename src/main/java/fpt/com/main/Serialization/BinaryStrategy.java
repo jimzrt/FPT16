@@ -42,7 +42,7 @@ public class BinaryStrategy implements fpt.com.SerializableStrategy {
 		try {
 			return (Product) is.readObject();
 		} catch (ClassNotFoundException | IOException e) {
-
+			//test
 			return null;
 		}
 
