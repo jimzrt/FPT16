@@ -1,4 +1,4 @@
-package fpt.com.main;
+package fpt.com.main.Base;
 
 import java.io.Externalizable;
 import java.io.IOException;

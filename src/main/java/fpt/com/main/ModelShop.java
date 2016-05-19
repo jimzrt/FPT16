@@ -1,10 +1,11 @@
 package fpt.com.main;
 
 import fpt.com.Product;
+import fpt.com.main.Base.ProductList;
 import javafx.collections.*;
 
 public class ModelShop extends
-		ModifiableObservableListBase<fpt.com.main.Product> {
+		ModifiableObservableListBase<fpt.com.main.Base.Product> {
 
 	public ProductList productlist;
 
@@ -14,25 +15,25 @@ public class ModelShop extends
 	}
 
 	@Override
-	protected void doAdd(int arg0, fpt.com.main.Product arg1) {
+	protected void doAdd(int arg0, fpt.com.main.Base.Product arg1) {
 		productlist.add(arg0, arg1);
 	}
 
 	@Override
-	protected fpt.com.main.Product doRemove(int arg0) {
-		return (fpt.com.main.Product) productlist.remove(arg0);
+	protected fpt.com.main.Base.Product doRemove(int arg0) {
+		return (fpt.com.main.Base.Product) productlist.remove(arg0);
 
 	}
 
 	@Override
-	protected fpt.com.main.Product doSet(int arg0, fpt.com.main.Product arg1) {
-		return (fpt.com.main.Product) productlist.set(arg0, arg1);
+	protected fpt.com.main.Base.Product doSet(int arg0, fpt.com.main.Base.Product arg1) {
+		return (fpt.com.main.Base.Product) productlist.set(arg0, arg1);
 
 	}
 
 	@Override
-	public fpt.com.main.Product get(int arg0) {
-		return (fpt.com.main.Product) productlist.get(arg0);
+	public fpt.com.main.Base.Product get(int arg0) {
+		return (fpt.com.main.Base.Product) productlist.get(arg0);
 
 	}
 

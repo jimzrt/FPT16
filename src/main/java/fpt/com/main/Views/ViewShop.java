@@ -1,7 +1,8 @@
-package fpt.com.main;
+package fpt.com.main.Views;
 
 import java.io.PrintStream;
 
+import fpt.com.main.Base.Product;
 import javafx.collections.FXCollections;
 
 import javafx.scene.control.TextArea;

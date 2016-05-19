@@ -1,16 +1,17 @@
-package fpt.com.main;
+package fpt.com.main.Serialization;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 import fpt.com.Product;
 import fpt.com.db.AbstractDatabaseStrategy;
+import fpt.com.main.Database.JDBCConnector;
 
 public class DatabaseStrategy extends AbstractDatabaseStrategy {
 
 	JDBCConnector connection = null;
 	int count = 0;
-	ArrayList<fpt.com.main.Product> products = null;
+	ArrayList<fpt.com.main.Base.Product> products = null;
 
 	@Override
 	public Product readObject() throws IOException {
@@ -40,7 +41,7 @@ public class DatabaseStrategy extends AbstractDatabaseStrategy {
 			connection.connect();
 		}
 
-		connection.insert((fpt.com.main.Product) obj);
+		connection.insert((fpt.com.main.Base.Product) obj);
 
 	}
 

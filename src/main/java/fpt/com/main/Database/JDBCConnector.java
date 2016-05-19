@@ -1,4 +1,4 @@
-package fpt.com.main;
+package fpt.com.main.Database;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import fpt.com.main.Base.Product;
 
 public class JDBCConnector {
 

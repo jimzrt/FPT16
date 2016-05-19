@@ -1,10 +1,18 @@
-package fpt.com.main;
+package fpt.com.main.Controller;
 
 import java.io.IOException;
 import java.util.Iterator;
 
 import fpt.com.SerializableStrategy;
-import fpt.com.main.Product;
+import fpt.com.main.ModelShop;
+import fpt.com.main.Base.Product;
+import fpt.com.main.Serialization.BinaryStrategy;
+import fpt.com.main.Serialization.DatabaseStrategy;
+import fpt.com.main.Serialization.OpenJPAStrategy;
+import fpt.com.main.Serialization.XMLStrategy;
+import fpt.com.main.Serialization.XStreamStrategy;
+import fpt.com.main.Utils.IDGenerator;
+import fpt.com.main.Views.ViewShop;
 
 public class ControllerShop {
 

@@ -1,6 +1,8 @@
-package fpt.com.main;
+package fpt.com.main.Controller;
 
-import fpt.com.main.Product;
+import fpt.com.main.ModelShop;
+import fpt.com.main.Base.Product;
+import fpt.com.main.Views.ViewCustomer;
 
 public class ControllerCustomer {
 

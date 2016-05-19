@@ -1,5 +1,7 @@
-package fpt.com.main;
+package fpt.com.main.Views;
 
+import fpt.com.main.Base.Order;
+import fpt.com.main.Base.Product;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -20,7 +22,7 @@ public class ViewCustomer extends BorderPane {
 	private Button button = new Button("Buy");
 	private ListView<Order> list = new ListView<Order>();
 
-	ViewCustomer() {
+	public ViewCustomer() {
 		table.setEditable(true);
 
 		nameCol = new TableColumn<Product, String>("Name");

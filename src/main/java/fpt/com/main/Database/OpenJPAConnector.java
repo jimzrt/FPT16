@@ -1,4 +1,4 @@
-package fpt.com.main;
+package fpt.com.main.Database;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,6 +11,8 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import org.apache.openjpa.persistence.OpenJPAPersistence;
+
+import fpt.com.main.Base.Product;
 
 public class OpenJPAConnector {
 

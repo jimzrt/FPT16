@@ -1,4 +1,4 @@
-package fpt.com.main;
+package fpt.com.main.Serialization;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -8,6 +8,8 @@ import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.UnmarshallingContext;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
+
+import fpt.com.main.Base.Product;
 
 public class ProductConverter implements Converter {
 

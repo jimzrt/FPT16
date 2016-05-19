@@ -1,4 +1,4 @@
-package fpt.com.main;
+package fpt.com.main.Serialization;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;

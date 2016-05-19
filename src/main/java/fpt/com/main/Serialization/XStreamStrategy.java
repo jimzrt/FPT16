@@ -1,4 +1,4 @@
-package fpt.com.main;
+package fpt.com.main.Serialization;
 
 import java.io.EOFException;
 import java.io.FileReader;
@@ -8,8 +8,6 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
-
-import fpt.com.main.ProductConverter;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
@@ -28,7 +26,7 @@ public class XStreamStrategy implements SerializableStrategy {
 
 	@Override
 	public Product readObject() throws IOException {
-		xstream.alias("ware", fpt.com.main.Product.class);
+		xstream.alias("ware", fpt.com.main.Base.Product.class);
 		xstream.registerConverter(new ProductConverter());
 
 		if (fr == null) {
@@ -46,7 +44,7 @@ public class XStreamStrategy implements SerializableStrategy {
 
 	@Override
 	public void writeObject(Product obj) throws IOException {
-		xstream.alias("ware", fpt.com.main.Product.class);
+		xstream.alias("ware", fpt.com.main.Base.Product.class);
 		xstream.registerConverter(new ProductConverter());
 		if (fw == null) {
 			fw = new FileWriter("XStreamSer.xml");
