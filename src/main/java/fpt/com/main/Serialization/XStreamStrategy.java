@@ -8,6 +8,8 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
@@ -24,19 +26,22 @@ public class XStreamStrategy implements SerializableStrategy {
 	ObjectOutputStream out;
 	ObjectInputStream in;
 
+	private String fileName = "XStreamSer.xml";
+
 	@Override
 	public Product readObject() throws IOException {
 		xstream.alias("ware", fpt.com.main.Base.Product.class);
 		xstream.registerConverter(new ProductConverter());
 
 		if (fr == null) {
-			fr = new FileReader("XStreamSer.xml");
+			if (!Files.exists(Paths.get("", fileName)))
+				return null;
+			fr = new FileReader(fileName);
 			in = xstream.createObjectInputStream(fr);
 		}
 		try {
 			return (Product) in.readObject();
 		} catch (ClassNotFoundException | EOFException e) {
-			// TODO Auto-generated catch block
 			return null;
 		}
 
@@ -47,7 +52,7 @@ public class XStreamStrategy implements SerializableStrategy {
 		xstream.alias("ware", fpt.com.main.Base.Product.class);
 		xstream.registerConverter(new ProductConverter());
 		if (fw == null) {
-			fw = new FileWriter("XStreamSer.xml");
+			fw = new FileWriter(fileName);
 			out = xstream.createObjectOutputStream(fw, "waren");
 		}
 
