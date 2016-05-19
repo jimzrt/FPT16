@@ -1,25 +1,31 @@
 package fpt.com.main;
 
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class IDGenerator {
 
-	ArrayList<Long> idList = new ArrayList<Long>();
+	Set<Long> idList = new HashSet<Long>();
 	private long counter = 1;
 
 	public long giveId() throws Exception {
-		while (idList.contains(counter))
-			counter++;
+
+		if (idList.size() > 0 && Collections.max(idList) > counter) {
+			counter = Collections.max(idList) + 1;
+		} else {
+			while (idList.contains(counter))
+				counter++;
+		}
 		if (counter > 999999)
 			throw new IDOverflowException();
 		idList.add(counter);
-		System.out.println(counter);
-		System.out.println(counter++);
-		return counter++;
+		return counter;
 	}
 
 	public void clear() {
 		counter = 1;
+		idList.clear();
 	}
 
 	public void addId(long id) {
