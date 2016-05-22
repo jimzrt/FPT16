@@ -113,6 +113,7 @@ public class ControllerShop {
 		try {
 			strat.close();
 		} catch (IOException e) {
+			//unschön james!
 			e.printStackTrace();
 		}
 
