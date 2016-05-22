@@ -101,6 +101,7 @@ public class ControllerShop {
 		ids.clear();
 
 		Product product;
+		//blablla
 		try {
 			while ((product = (Product) strat.readObject()) != null) {
 				ids.addId(product.getId());
