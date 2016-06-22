@@ -10,7 +10,8 @@ public class IDGenerator {
 	private long counter = 1;
 
 	public long giveId() throws Exception {
-
+		return -1;
+/*
 		if (idList.size() > 0 && Collections.max(idList) > counter) {
 			counter = Collections.max(idList) + 1;
 		} else {
@@ -20,7 +21,7 @@ public class IDGenerator {
 		if (counter > 999999)
 			throw new IDOverflowException();
 		idList.add(counter);
-		return counter;
+		return counter;*/
 	}
 
 	public void clear() {

@@ -6,7 +6,7 @@
 	<persistence-unit name="openjpa">
 		<description>JPA Application Client</description>
 		<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
-		<class>fpt.com.main.Product</class>
+		<class>fpt.com.main.Base.Product</class>
 		<properties>
       <property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver" />
       <property name="openjpa.ConnectionURL"

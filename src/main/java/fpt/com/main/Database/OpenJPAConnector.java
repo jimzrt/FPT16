@@ -62,10 +62,14 @@ public class OpenJPAConnector {
 
 	public void close() {
 
-		if (e != null)
+		if (e != null){
 			e.close();
-		if (fac != null)
+			e = null;
+		}
+		if (fac != null){
 			fac.close();
+			fac = null;
+		}
 
 	}
 

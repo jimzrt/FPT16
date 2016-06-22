@@ -83,8 +83,7 @@ public class ViewShop extends BorderPane {
 
 		setBottom(ta);
 */
-		strategy.setItems(FXCollections.observableArrayList("Binary", "Beans XML", "XStream XML"));
-			//	, "JDBC Database","OpenJPA Database"));
+		strategy.setItems(FXCollections.observableArrayList("Binary", "Beans XML", "XStream XML", "JDBC Database","OpenJPA Database"));
 		strategy.getSelectionModel().select(0);
 		HBox hbox = new HBox();
 		hbox.setSpacing(5);
