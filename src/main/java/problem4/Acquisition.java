@@ -1,6 +1,7 @@
 package problem4;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -10,90 +11,119 @@ public class Acquisition implements Runnable {
 	List<Cashpoint> cashpoints = new ArrayList<Cashpoint>();
 	boolean stopAcquisition = false;
 	Balance balance = new Balance();
-	Lock myLock = new ReentrantLock();
+	Lock counterLock = new ReentrantLock();
+	ArrayList<Integer> cashpointIndex = new ArrayList<Integer>();
+	int start = 1;
+
+	public Acquisition() {
+		System.out.println("Akquise gestartet.");
+
+		for (int i = 1; i <= 6; i++) {
+			cashpoints.add(new Cashpoint(i, balance, counterLock));
+		}
+	}
 
 	@Override
 	public void run() {
 
-		cashpoints.add(new Cashpoint(1, balance, myLock));
-		cashpoints.add(new Cashpoint(2, balance, myLock));
-		cashpoints.add(new Cashpoint(3, balance, myLock));
-		cashpoints.add(new Cashpoint(4, balance, myLock));
-		cashpoints.add(new Cashpoint(5, balance, myLock));
-		cashpoints.add(new Cashpoint(6, balance, myLock));
-		cashpoints.get(0).open();
-
-		System.out.println("Akquise gestartet.");
-		long startTime = System.currentTimeMillis();
 		double randomTime = Math.random() * 2000;
 
-		while (true) {
+		while (!stopAcquisition) {
 			try {
-				Thread.sleep(50);
+				Thread.sleep((long) randomTime);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			counterLock.lock();
+			addCustomer();
+			counterLock.unlock();
 
-			if (stopAcquisition) {
-				System.out.println("Akquise beendet.");
-				break;
-			}
-
-			// acquisition
-			if ((System.currentTimeMillis() - startTime) > randomTime) {
-
-				startTime = System.currentTimeMillis();
-				randomTime = Math.random() * 2000;
-				work();
-
-			}
+			randomTime = Math.random() * 2000;
 
 		}
+
+		System.out.println("Akquise beendet.");
+		System.out.println();
 
 	}
 
-	private void work() {
+	private void addCustomer() {
 
 		int i = indexOfCashpoint();
-		System.out.println("Neuer Kunde an Kasse " + (i + 1) + " eingereiht.");
-		cashpoints.get(i).addKunde();
 
-		if (cashpoints.get(i).count() == 6) {
-			openNewCashpoint();
-		}
+		if (!cashpoints.get(i).closed) {
+			if (cashpoints.get(i).openable) {
+				cashpoints.get(i).open();
+			}
 
-		if (cashpoints.get(i).count() == 8) {
-			System.out.println("Es befinden sich 8 Kunden an Kasse " + (i+1) + "." );
-			
-			stopAcquisition = true;
+			print();
+
+			System.out.println("Neuer Kunde an Kasse " + cashpoints.get(i).index + " eingereiht.");
+			System.out.println();
+
+			cashpoints.get(i).addKunde();
+
+			if (cashpoints.get(i).count == 6) {
+				openNewCashpoint();
+			}
+
+			if (cashpoints.get(i).count == 8) {
+				System.out.println("Es befinden sich 8 Kunden an Kasse " + cashpoints.get(i).index + ".");
+				System.out.println();
+
+				stopAcquisition = true;
+			}
+		} else {
+			System.out.println("Alle Kassen geschlossen... Es warten bereits " + start++ + " Kunden.\n"
+					+ "Und mit jeder weiteren Person wächst ihr Zorn und der Gedanke daran, sich in der anonymen Masse zu verlieren und den Laden einfach anzuzünden.");
+			System.out.println();
+
 		}
 
 	}
 
 	private int indexOfCashpoint() {
-		// TODO Auto-generated method stub
-		int lowest = 100;
-		int count = 100;
-		for (int i = 0; i < cashpoints.size(); i++) {
 
-			if (cashpoints.get(i).count() >= 0
-					&& cashpoints.get(i).count() < count) {
-				lowest = i;
-				count = cashpoints.get(i).count();
-			}
-		}
-		return lowest;
+		return cashpoints.indexOf(Collections.min(cashpoints));
+
 	}
 
 	private void openNewCashpoint() {
-		// TODO Auto-generated method stub
 		for (Cashpoint cash : cashpoints) {
-			if (cash.count() == -1) {
+			if (cash.openable == true) {
 				cash.open();
 				break;
 			}
 		}
+
+	}
+
+	private void print() {
+
+		for (Cashpoint cash : cashpoints) {
+			System.out.format("%-16s", "Kasse " + cash.index + ":");
+		}
+		System.out.println();
+		for (Cashpoint cash : cashpoints) {
+			if (cash.openable || cash.closed) {
+				System.out.format("%-4s", "| ");
+				System.out.format("%-8s", "closed ");
+				System.out.format("%-4s", " |");
+
+			} else {
+				StringBuilder str = new StringBuilder();
+				System.out.format("%-4s", "| " + cash.count);
+				for (int i = 0; i < cash.count; i++) {
+					str.append("o");
+
+				}
+				System.out.format("%-8s", str.toString());
+				System.out.format("%-4s", " |");
+
+			}
+		}
+		System.out.println();
+		System.out.println();
 
 	}
 

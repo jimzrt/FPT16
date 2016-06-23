@@ -2,12 +2,15 @@ package problem4;
 
 import java.util.concurrent.locks.Lock;
 
-public class Cashpoint implements Runnable {
+public class Cashpoint implements Runnable, Comparable<Cashpoint> {
 
-	int index;
-	Balance balance;
-	int count = -1;
-	Lock myLock;
+	private Balance balance;
+	private Lock myLock;
+
+	public int index;
+	public int count = 9999;
+	public boolean openable = true;
+	public boolean closed = false;
 
 	public Cashpoint(int index, Balance balance, Lock myLock) {
 
@@ -17,17 +20,16 @@ public class Cashpoint implements Runnable {
 
 	}
 
-	public int count() {
-		return count;
-	}
-
 	public void addKunde() {
 		count++;
 	}
 
 	public void open() {
 		System.out.println("Kasse " + index + " geoeffnet.");
-		count++;
+		System.out.println();
+
+		openable = false;
+		count = 0;
 		Thread thread = new Thread(this);
 		thread.start();
 
@@ -35,46 +37,62 @@ public class Cashpoint implements Runnable {
 
 	@Override
 	public void run() {
-		if (index != 1)
-			try {
-				Thread.sleep(6000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+		try {
+			Thread.sleep(6000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
-		long startTimeQueue = System.currentTimeMillis();
 		double randomTimeQueue = (Math.random() * 4000) + 6000;
 
 		while (true) {
 			try {
-				Thread.sleep(50);
+				Thread.sleep((long) randomTimeQueue);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 
-			if ((System.currentTimeMillis() - startTimeQueue) > randomTimeQueue) {
+			if (count != 0) {
 
-				startTimeQueue = System.currentTimeMillis();
 				randomTimeQueue = (Math.random() * 4000) + 6000;
 
+				myLock.lock();
 				count--;
 
-				System.out.println("Abarbeitung von Kunde an Kasse " + index
-						+ ". " + count + " verbleiben.");
-				myLock.lock();
+				System.out.println("Abarbeitung von Kunde an Kasse " + index + ". " + count + " verbleiben.");
+				System.out.println();
+
+				balance.getLock().lock();
 				balance.add(index, Math.random() * 100);
 				balance.out();
-				myLock.unlock();
+				balance.getLock().unlock();
 				if (count == 0) {
-					count--;
+					count = 10000;
+					closed = true;
 					System.out.println("Kasse " + index + " geschlossen.");
+					System.out.println();
+					myLock.unlock();
 					break;
 
+				} else {
+					myLock.unlock();
 				}
+			} else {
+				randomTimeQueue = 1000;
 			}
 
 		}
 
+	}
+
+	@Override
+	public int compareTo(Cashpoint o) {
+		return Integer.compare(this.count, o.count);
+	}
+
+	public String toString() {
+
+		return "Kasse " + index + ": " + count;
 	}
 
 }
