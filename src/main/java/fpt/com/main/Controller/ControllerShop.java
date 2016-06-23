@@ -36,18 +36,29 @@ public class ControllerShop {
 
 					Product p = new Product();
 					p.setName(view.getNameInput());
-					String regex = "[0-9]+";
-					if (view.getPriceInput().matches(regex) && view.getCountInput().matches(regex)) {
-						p.setPrice(Double.parseDouble(view.getPriceInput()));
-						p.setQuantity(Integer.parseInt(view.getCountInput()));
-						// p.setId(-1);
-						try {
-							p.setId(ids.giveId());
-						} catch (Exception e1) {
-							e1.printStackTrace();
+					String regexPrice = "[0-9]+([,.][0-9]{1,2})?";
+					String regexCount = "[0-9]+";
+					if (!view.getPriceInput().matches(regexPrice)) {
+						view.setErrorText("Preis-Format beachten.\n(Bsp.: 12.44)");
+
+					} else {
+						if (view.getCountInput().matches(regexCount)) {
+							p.setPrice(Double.parseDouble(view.getPriceInput().replaceAll(",", ".")));
+							p.setQuantity(Integer.parseInt(view.getCountInput()));
+							// p.setId(-1);
+							try {
+								p.setId(ids.giveId());
+							} catch (Exception e1) {
+								e1.printStackTrace();
+							}
+							model.add(p);
+						} else {
+							view.setErrorText("Anzahl-Format beachten.\n(Nur Zahlen)");
+
 						}
-						model.add(p);
 					}
+				} else {
+					view.setErrorText("Bitte alle Felder ausfüllen.");
 				}
 
 			}
@@ -101,7 +112,7 @@ public class ControllerShop {
 		ids.clear();
 
 		Product product;
-		//blablla
+		// blablla
 		try {
 			while ((product = (Product) strat.readObject()) != null) {
 				ids.addId(product.getId());
@@ -114,7 +125,7 @@ public class ControllerShop {
 		try {
 			strat.close();
 		} catch (IOException e) {
-			//unschön james!
+			// unschön james!
 			e.printStackTrace();
 		}
 

@@ -1,8 +1,14 @@
 package fpt.com.main.Views;
 
+import java.awt.event.ActionListener;
 import java.io.PrintStream;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import javax.swing.SwingUtilities;
 
 import fpt.com.main.Base.Product;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 
 import javafx.scene.control.TextArea;
@@ -19,8 +25,13 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 public class ViewShop extends BorderPane {
+	
+	Timer timer = new Timer();
+
 
 	private Button button = new Button("Add");
 	private Button button2 = new Button("Delete");
@@ -30,6 +41,8 @@ public class ViewShop extends BorderPane {
 	private Label nameL = new Label("Name:");
 	private Label priceL = new Label("Price:");
 	private Label countL = new Label("Count:");
+	private Label errorText = new Label("");
+
 	private ChoiceBox<String> strategy = new ChoiceBox<String>();
 	private Button buttonL = new Button("Load...");
 	private Button buttonS = new Button("Save");
@@ -58,12 +71,19 @@ public class ViewShop extends BorderPane {
 		count.setLayoutY(110);
 
 		// Buttons
-		button.setLayoutX(14);
+		button.setLayoutX(18);
 		button.setLayoutY(150);
 		button2.setLayoutX(125);
 		button2.setLayoutY(150);
+		
+		//Error Text
+		errorText.setLayoutX(18);
+		errorText.setLayoutY(200);
+		errorText.setTextFill(Color.web("#bf4f51"));
+		//errorText.setFont(Font.font("Cambria", 16));
 
-		box.getChildren().addAll(name, price, count, nameL, priceL, countL, button, button2);
+
+		box.getChildren().addAll(name, price, count, nameL, priceL, countL, button, button2, errorText);
 
 		setRight(box);
 
@@ -150,6 +170,24 @@ public class ViewShop extends BorderPane {
 
 	public void update() {
 		list.fireEvent(null);
+	}
+	
+	public void setErrorText(String error){
+		errorText.setText(error);
+		
+		timer.cancel();
+		timer = new Timer();
+	    timer.schedule(new TimerTask() {
+	        @Override
+	        public void run() {
+	            Platform.runLater(new Runnable() {
+	                @Override
+	                public void run() {
+	                	errorText.setText("");
+	                }
+	            });
+	        }
+	    }, 3000);
 	}
 
 }

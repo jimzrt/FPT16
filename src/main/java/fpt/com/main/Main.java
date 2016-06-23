@@ -19,7 +19,8 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-
+		
+		
 		ModelShop model = new ModelShop();
 
 		ViewShop view = new ViewShop();
