@@ -6,8 +6,10 @@ import fpt.com.main.Views.ViewCustomer;
 import fpt.com.main.Views.ViewShop;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class Main extends Application {
 
@@ -20,7 +22,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		
+
 		ModelShop model = new ModelShop();
 
 		ViewShop view = new ViewShop();
@@ -36,9 +38,14 @@ public class Main extends Application {
 		Scene scene = new Scene(view);
 		primaryStage.setTitle("Shop");
 		primaryStage.setScene(scene);
-		primaryStage.setOnCloseRequest(e -> {
-			Platform.exit();
-		});
+		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+		       @Override
+		       public void handle(WindowEvent e) {
+		          Platform.exit();
+		         System.exit(0);
+		       }
+		    });
+
 
 		// JavaFX new
 
@@ -48,12 +55,19 @@ public class Main extends Application {
 		stage2.setScene(scene2);
 		stage2.setX(primaryStage.getX() - stage2.getWidth());
 		stage2.setY(primaryStage.getY() - stage2.getHeight());
-		stage2.setOnCloseRequest(e -> {
-			Platform.exit();
-		});
+		stage2.setOnCloseRequest(new EventHandler<WindowEvent>() {
+		       @Override
+		       public void handle(WindowEvent e) {
+		          Platform.exit();
+		          System.exit(0);
+		       }
+		    });
+
+		
+		primaryStage.show();
+
 		stage2.show();
 
-		primaryStage.show();
 	}
 
 }

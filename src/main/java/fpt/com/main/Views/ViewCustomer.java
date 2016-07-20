@@ -36,7 +36,8 @@ public class ViewCustomer extends BorderPane {
 	TableColumn<Product, String> nameCol;
 	private Button button = new Button("Buy");
 	private ListView<Order> list = new ListView<Order>();
-
+	private Label timeLabel = new Label();
+	
 	public ViewCustomer() {
 		table.setEditable(true);
 
@@ -103,61 +104,16 @@ public class ViewCustomer extends BorderPane {
 		list.setPrefWidth(400);
 		setCenter(list);
 
-		Label time = new Label();
-		time.setText("Serverzeit:");
+		timeLabel.setText("Serverzeit:");
 
-		setBottom(time);
+		setBottom(timeLabel);
 
-		Client sendTask = new Client() {
-			@Override
-			public void run() {
+	
 
-				while (true) {
-
-					// Socket für den Klienten anlegen
-					try (DatagramSocket dSocket = new DatagramSocket(55555);) {
-
-						try {
-							while (true) {
-
-								dSocket.setSoTimeout(5000);
-								dSocket.send(packetReq);
-
-								try {
-									dSocket.receive(packetResp);
-
-									text = new String(packetResp.getData(), 0, packetResp.getLength());
-									lastTime = " - Letzte Verbindung: " + text;
-								} catch (SocketTimeoutException e) {
-									text = "Kein Server erreichbar" + lastTime;
-								}
-
-								Platform.runLater(() -> time.setText(text));
-								try {
-									Thread.sleep(1000);
-								} catch (InterruptedException e) {
-									e.printStackTrace();
-								}
-
-							}
-						} catch (IOException e1) {
-							e1.printStackTrace();
-						}
-
-					} catch (SocketException e1) {
-						e1.printStackTrace();
-					}
-
-				}
-
-			}
-
-		};
-
-		Thread th = new Thread(sendTask);
-		th.setDaemon(true);
-		th.start();
-
+	}
+	
+	public void setTimeLabelText(String text){
+		timeLabel.setText(text);
 	}
 
 	public void setList(ObservableList<Product> list) {
