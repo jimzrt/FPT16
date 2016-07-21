@@ -51,5 +51,11 @@ public class Order extends java.util.ArrayList<Product> implements
 	public int getQuantity() {
 		return quantity;
 	}
+	
+	public void print(){
+		for(Product product : this){
+			System.out.println(product);
+		}
+	}
 
 }

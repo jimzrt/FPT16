@@ -1,17 +1,20 @@
-package fpt.com.main.Network;
+package Warehouse;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class UDPServer {
+public class UDPServer implements Runnable {
 
-	public static void main(String[] args) {
-		
-		System.out.println("Starte Server - Port 6667");
+
+
+	@Override
+	public void run() {
+		System.out.println("Starte UDP Server - Port 6667");
 		System.out.println("=========================");
 		// Socket erstellen unter dem der Server erreichbar ist
 		try (DatagramSocket socket =  new DatagramSocket(6667);){
@@ -43,7 +46,7 @@ public class UDPServer {
 
 						Date dt = new Date();
 						
-						SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy HH:mm:ss"); //Or whatever format fits best your needs.
+						SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss"); //Or whatever format fits best your needs.
 						String dateStr = sdf.format(dt);
 						
 						
@@ -74,6 +77,12 @@ public class UDPServer {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
-
 	}
+
+
+
+		
+		
+
+	
 }

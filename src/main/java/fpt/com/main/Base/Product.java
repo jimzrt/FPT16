@@ -25,6 +25,15 @@ import javafx.beans.property.*;
 @Entity()
 @Table(name = "products")
 public class Product implements fpt.com.Product, Externalizable {
+	
+	public Product(String name, double price, int quantity){
+		this.name.set(name);
+		this.price.set(price);
+		this.quantity.set(quantity);
+	}
+
+	public Product() {
+	}
 
 	@Persistent
 	@Strategy("fpt.com.db.StringPropertyValueHandler")

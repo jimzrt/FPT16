@@ -4,14 +4,14 @@ import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-public class Client implements Runnable {
+public class UDPClient implements Runnable {
 
 	public String text = "";
 	public DatagramPacket packetReq;
 	public DatagramPacket packetResp;
 	public String lastTime = "";
 
-	public Client() { 
+	public UDPClient() { 
 		InetAddress ia = null;
 		try {
 			ia = InetAddress.getByName("localhost");

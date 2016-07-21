@@ -7,7 +7,7 @@ import java.net.SocketTimeoutException;
 
 import fpt.com.main.ModelShop;
 import fpt.com.main.Base.Product;
-import fpt.com.main.Network.Client;
+import fpt.com.main.Network.UDPClient;
 import fpt.com.main.Views.ViewCustomer;
 import javafx.application.Platform;
 
@@ -21,19 +21,22 @@ public class ControllerCustomer {
 		view.setList(model);
 
 		view.addEventHandler(e -> {
+			if (e.toString().contains("Buy")) {
+				System.out.println(view.getOrder());
+			}
 
-			int selectedIndex = e.getTableView().getSelectionModel()
-					.getSelectedIndex();
-			Product p = e.getRowValue();
-			p.setName(e.getNewValue());
-			model.set(selectedIndex, p);
+		//	int selectedIndex = e.getTableView().getSelectionModel()
+		//			.getSelectedIndex();
+		//	Product p = e.getRowValue();
+		//	p.setName(e.getNewValue());
+		//	model.set(selectedIndex, p);
 
 		});
 		
-		Client sendTask = new Client() {
+		UDPClient sendTask = new UDPClient() {
 			@Override
 			public void run() {
-
+				
 				while (true) {
 
 					// Socket für den Klienten anlegen
@@ -54,7 +57,7 @@ public class ControllerCustomer {
 									text = "Kein Server erreichbar" + lastTime;
 								}
 
-							//	Platform.runLater(() -> view.setTimeLabelText(text));
+								Platform.runLater(() -> view.setTimeLabelText(text));
 								try {
 									Thread.sleep(1000);
 								} catch (InterruptedException e) {
@@ -80,9 +83,9 @@ public class ControllerCustomer {
 
 		};
 
-	//	Thread th = new Thread(sendTask);
-	//	th.setDaemon(true);
-		//th.start();
+		Thread th = new Thread(sendTask);
+		th.setDaemon(true);
+		th.start();
 
 	}
 	
