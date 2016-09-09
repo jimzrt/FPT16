@@ -23,7 +23,7 @@ sich dadurch viel Arbeit sparen (z.B. SimpleStringProperty).
 
 b) Schreiben Sie die Klasse ModelShop, welche die Daten von der GUI hält.
 
-Diese Klasse soll von ModiableObservableListBase ableiten und durch Nutzung eines Delegate (Product-
+Diese Klasse soll von ModifiableObservableListBase ableiten und durch Nutzung eines Delegate (Product-
 List) die nötigen Funktionen des Interfaces ProductList realisieren.
 
 c) Die Klasse ViewShop dient als Benutzerschnittstelle für den Shop.
@@ -46,7 +46,7 @@ Aufgabe 2
 
 Bestellformular ViewCustomer
 
-Schreiben Sie hier nur die grasche Oberäche ohne Funktionalität.
+Schreiben Sie hier nur die grafische Oberfläche ohne Funktionalität.
 (Die Implementierung der Klasse ControllerCustomer wird in späteren Aufgaben folgen.)
 
 a) Die Klasse ViewCustomer soll alle Produkte so anzeigen, dass der Name, der Preis und dessen Anzahl
